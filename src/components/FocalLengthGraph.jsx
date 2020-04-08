@@ -8,6 +8,7 @@ export const FocalLengthGraph = () => {
   );
   const hasSelections = selectedEquipment.camera && selectedEquipment.lens;
   /*
+  // I will be using this later.
   const minPossibleFocalLength =
     cameras.reduce((prev, current) =>
       prev.crop < current.crop ? prev : current

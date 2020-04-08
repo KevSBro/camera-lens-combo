@@ -1,38 +1,104 @@
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfdfd !important;
+  padding-bottom: 10px;
+}
 .App {
+}
+
+.progress-container {
+  /*margin: 0px !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 3px;*/
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 10px;
+  text-align: left;
+  padding: 2px;
+}
+.progress {
+  margin: 5px;
+  border: 1px solid #c3c3c3;
+}
+.progress-bar-spacer {
+  background-color: transparent !important;
+  color: red;
+}
+.progress-bar-graph {
+  background-color: rgb(201, 218, 201) !important;
+  color: #333333 !important;
+  overflow: visible !important;
+  border-left: 1px solid #000;
+  text-align: left !important;
+}
+.listContainer {
+  margin: 0px !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3px;
+}
+.equipmentColumn > .title {
+  text-transform: uppercase;
   text-align: center;
+  background-color: rgb(184, 184, 184);
+  border-radius: 7px 7px 0 0;
+}
+.equipmentColumn > select {
+  width: 100%;
+}
+.equipmentColumn {
+  border: 1px solid rgb(233, 233, 233);
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+  padding: 2px;
+}
+.equipmentRow {
+  padding: 5px;
+  padding-bottom: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.equipmentName {
+  font-size: larger;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hidden {
+  display: none;
+}
+
+/* Clear floats after the columns */
+.equipmentRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+footer {
+  font-size: xx-small;
+  text-align: center;
+  color: #999;
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+}
+
+@media (max-width: 700px) {
+  .listContainer {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-template-rows: auto; /*repeat(4, 1fr);*/
+    grid-row-gap: 3px;
+    margin-bottom: 30px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .equipmentColumn {
+    width: 100%;
   }
 }
